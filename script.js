@@ -54,12 +54,16 @@ document.getElementById("start-btn").addEventListener("click", () => {
 document.getElementById("pause-btn").addEventListener("click", () => {
   if (document.getElementById("pause-btn").textContent === "Pause") {
     pauseTimer();
+    document.getElementById("start-btn").disabled = false;
+    document.getElementById("pause-btn").textContent = "Continue";
   } else {
     startTimer();
     document.getElementById("pause-btn").textContent = "Pause";
+    document.getElementById("start-btn").disabled = true;
   }
 });
 
 document.getElementById("stop-btn").addEventListener("click", () => {
   stopTimer();
+  document.getElementById("start-btn").disabled = false;
 });
